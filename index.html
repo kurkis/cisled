@@ -7,6 +7,7 @@
   <meta name="description" content="CISLED: Soporte técnico, reparación y optimización de PCs y notebooks en Córdoba.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="logosolo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{ --brand:#0f1d40; --accent:#ff6a00; }
@@ -52,7 +53,7 @@
           CISLED <span class="text-[var(--accent)]">Computación</span>
         </h1>
         <p class="mt-4 text-lg text-slate-600">
-          Soporte técnico, reparación y optimización de PCs y notebooks. Mantenimiento, upgrades y solución de problemas con garantía. Atención en taller y a domicilio.
+          Soporte técnico, reparación y optimización de PCs y notebooks. Mantenimiento, upgrades y solución de problemas con garantía. Atención en Local y Remoto.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="https://wa.me/5493512294292?text=Hola%2C%20necesito%20ayuda%20con%20mi%20PC%20o%20Notebook."
@@ -79,14 +80,14 @@
     <div class="mx-auto max-w-2xl text-center">
       <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Servicios</span>
       <h2 class="text-3xl md:text-4xl font-bold">Lo que hacemos bien</h2>
-      <p class="mt-3 text-slate-600">Soluciones claras, presupuestos honestos y resultados medibles.</p>
+      <p class="mt-3 text-slate-600">Soluciones claras, presupuestos y resultados medibles.</p>
     </div>
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="rounded-2xl border p-6">
         <h3 class="font-semibold text-lg">Diagnóstico y limpieza</h3>
         <p class="text-sm text-slate-600 mt-1">Chequeo completo, limpieza interna, reemplazo de pasta térmica y pads.</p>
         <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
-          <li>Revisión 20+ puntos</li>
+          <li>Mayor performance</li>
           <li>Mejoras de temperatura</li>
           <li>Ruido reducido</li>
         </ul>
@@ -101,7 +102,7 @@
         </ul>
       </div>
       <div class="rounded-2xl border p-6">
-        <h3 class="font-semibold text-lg">Upgrades SSD/RAM</h3>
+        <h3 class="font-semibold text-lg">Upgrades CPU/SSD/RAM</h3>
         <p class="text-sm text-slate-600 mt-1">Asesoramiento y cambio a SSD NVMe/SATA y ampliación de memoria.</p>
         <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
           <li>Clonado opcional</li>
@@ -182,9 +183,9 @@
       <p class="mt-3 text-slate-600">Un vistazo a lo que entregamos</p>
     </div>
     <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <img src="Eslogan1.png" class="rounded-xl border" alt="Trabajo 1" />
-      <img src="Eslogan2.png" class="rounded-xl border" alt="Trabajo 2" />
-      <img src="Eslogan3.png" class="rounded-xl border" alt="Trabajo 3" />
+      <picture><source srcset="Eslogan1.png"><img src="Esiogan1.png" class="rounded-xl border" alt="Trabajo 1" /></picture>
+      <picture><source srcset="Eslogan2.png"><img src="Esiogan2.png" class="rounded-xl border" alt="Trabajo 2" /></picture>
+      <picture><source srcset="Eslogan3.png"><img src="Esiogan3.png" class="rounded-xl border" alt="Trabajo 3" /></picture>
       <img src="logosolo.png"  class="rounded-xl border p-6 object-contain" alt="Logo simple" />
     </div>
   </section>
@@ -253,17 +254,24 @@
           <a href="https://wa.me/5493512294292?text=Hola%2C%20quiero%20hacer%20una%20consulta." class="rounded-xl px-4 py-2 bg-slate-100">WhatsApp</a>
         </div>
         <div class="grid gap-1 text-sm text-slate-600 mt-2">
-          <div>📍 Zona Centro, Córdoba, Argentina</div>
+          <div>📍 Luis Braile 1546, X5014 Córdoba · <a class="text-blue-700 underline" href="https://www.google.com/maps/place/Luis+Braile+1546,+X5014+C%C3%B3rdoba" target="_blank" rel="noopener">Ver en Google Maps</a></div>
           <div>✉️ cisled.computacion@gmail.com</div>
           <div>🕒 Horarios: Lun–Sáb 9:00–16:00</div>
           <div>IG: <a class="text-blue-700 underline" href="https://www.instagram.com/cisledcba/">@cisledcba</a> · FB: <a class="text-blue-700 underline" href="https://www.facebook.com/cisled">/cisled</a></div>
         </div>
       </form>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Luis+Braile+1546,+X5014+C%C3%B3rdoba"
+         target="_blank" rel="noopener"
+         class="inline-block rounded-xl px-3 py-2 bg-slate-900 text-white text-sm mt-2 mb-4">Cómo llegar</a>
       <div class="rounded-2xl border p-6 grid gap-3">
         <h3 class="text-xl font-semibold">Mapa y zonas</h3>
         <p class="text-sm text-slate-600">Atendemos Córdoba Capital y alrededores. Retiro y entrega a coordinar.</p>
-        <div class="aspect-video rounded-xl bg-slate-100 grid place-items-center text-slate-500">
-          Mapa/Área de cobertura
+        <div class="aspect-video rounded-xl overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps?q=Luis+Braile+1546,+X5014+C%C3%B3rdoba&z=16&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </div>
@@ -318,5 +326,7 @@
       });
     });
   </script>
+</body>
+</html>
 </body>
 </html>
