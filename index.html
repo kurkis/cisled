@@ -239,30 +239,28 @@
       <p class="mt-3 text-slate-600">Respondemos en el día hábil</p>
     </div>
     <div class="mt-10 grid md:grid-cols-2 gap-8">
-  <form class="rounded-2xl border p-6 grid gap-3" onsubmit="location.href=`mailto:cisled.computacion@gmail.com?subject=Consulta%20desde%20la%20web%20de%20CISLED&body=Nombre:%20${encodeURIComponent(this.nombre.value)}%0AEmail:%20${encodeURIComponent(this.email.value)}%0A%0A${encodeURIComponent(this.mensaje.value)}`; return false;">
-        <label class="text-sm">Nombre
-          <input name="nombre" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Tu nombre" />
+      <form id="contactForm" class="rounded-2xl border p-6 grid gap-3" novalidate>
+        <label for="nombre" class="text-sm">Nombre
+          <input id="nombre" name="nombre" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Tu nombre" required autocomplete="name" />
         </label>
-        <label class="text-sm">Email
-          <input type="email" name="email" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="tu@email.com" />
+        <label for="email" class="text-sm">Email
+          <input id="email" type="email" name="email" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="tu@email.com" required autocomplete="email" />
         </label>
-        <label class="text-sm">Mensaje
-          <textarea name="mensaje" rows="5" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Contanos qué necesitás…"></textarea>
+        <label for="mensaje" class="text-sm">Mensaje
+          <textarea id="mensaje" name="mensaje" rows="5" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Contanos qué necesitás…" required></textarea>
         </label>
         <div class="flex gap-3">
-          <button class="rounded-xl px-4 py-2 bg-slate-900 text-white">Enviar por Email</button>
+          <button id="contactSubmit" type="submit" class="rounded-xl px-4 py-2 bg-slate-900 text-white">Enviar por Email</button>
           <a href="https://wa.me/5493512294292?text=Hola%2C%20quiero%20hacer%20una%20consulta." class="rounded-xl px-4 py-2 bg-slate-100">WhatsApp</a>
         </div>
+        <div id="contactStatus" role="status" aria-live="polite" class="text-sm mt-2 text-slate-600"></div>
         <div class="grid gap-1 text-sm text-slate-600 mt-2">
           <div>📍 Luis Braile 1546, X5014 Córdoba · <a class="text-blue-700 underline" href="https://www.google.com/maps/place/Luis+Braile+1546,+X5014+C%C3%B3rdoba" target="_blank" rel="noopener">Ver en Google Maps</a></div>
           <div>✉️ cisled.computacion@gmail.com</div>
           <div>🕒 Horarios: Lun–Sáb 9:00–16:00</div>
           <div>IG: <a class="text-blue-700 underline" href="https://www.instagram.com/cisledcba/">@cisledcba</a> · FB: <a class="text-blue-700 underline" href="https://www.facebook.com/cisled">/cisled</a></div>
         </div>
-      </form>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Luis+Braile+1546,+X5014+C%C3%B3rdoba"
-         target="_blank" rel="noopener"
-         class="inline-block rounded-xl px-3 py-2 bg-slate-900 text-white text-sm mt-2 mb-4">Cómo llegar</a>
+  </form>
       <div class="rounded-2xl border p-6 grid gap-3">
         <h3 class="text-xl font-semibold">Mapa y zonas</h3>
         <p class="text-sm text-slate-600">Atendemos Córdoba Capital y alrededores. Retiro y entrega a coordinar.</p>
@@ -326,7 +324,59 @@
       });
     });
   </script>
-</body>
+  <script>
+    // Contact form handling: validation, prepare mailto and UX messages
+    (function(){
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('contactStatus');
+      const submit = document.getElementById('contactSubmit');
+      if(!form) return;
+
+      function validateEmail(email){
+        // simple regex for basic validation
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        status.textContent = '';
+
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+
+        if(!nombre || !email || !mensaje){
+          status.textContent = 'Por favor completa todos los campos.';
+          return;
+        }
+        if(!validateEmail(email)){
+          status.textContent = 'Por favor ingresa un email válido.';
+          return;
+        }
+
+        // disable submit to avoid double clicks
+        submit.disabled = true;
+        submit.classList.add('opacity-50', 'cursor-not-allowed');
+        status.textContent = 'Preparando correo...';
+
+        const subject = 'Consulta desde la web de CISLED';
+        const body = `Nombre: ${nombre}%0AEmail: ${email}%0A%0A${mensaje}`;
+        const mailto = `mailto:cisled.computacion@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // open mail client
+        setTimeout(()=>{
+          location.href = mailto;
+          status.textContent = 'Se abrió tu cliente de correo. Si no sucede nada, copia y pega este correo: cisled.computacion@gmail.com';
+          // re-enable after a short delay
+          setTimeout(()=>{
+            submit.disabled = false;
+            submit.classList.remove('opacity-50', 'cursor-not-allowed');
+          }, 1500);
+        }, 200);
+      });
+    })();
+  </script>
+ </body>
 </html>
 </body>
 </html>
