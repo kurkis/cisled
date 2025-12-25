@@ -28,8 +28,10 @@
   </style>
 </head>
 <body class="bg-white text-slate-900">
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b relative">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      
       <a href="#inicio" class="flex items-center gap-3">
         <img src="Cisledlogo.png" alt="CISLED" class="h-10 w-10 rounded-xl object-contain" />
         <div class="leading-tight">
@@ -37,6 +39,7 @@
           <div class="text-xs text-slate-500 -mt-0.5">Computación</div>
         </div>
       </a>
+
       <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#servicios" class="hover:opacity-80">Servicios</a>
         <a href="#precios" class="hover:opacity-80">Precios</a>
@@ -46,15 +49,28 @@
         <a href="#contacto" class="hover:opacity-80">Contacto</a>
         <a href="#faq" class="hover:opacity-80">FAQ</a>
       </nav>
+
       <div class="hidden md:flex items-center gap-2 mr-2">
         <a href="https://www.instagram.com/cisledcba/" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram text-xl text-slate-700"></i></a>
         <a href="https://www.facebook.com/cisled" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook text-xl text-slate-700"></i></a>
+        <a href="https://wa.me/5493512294292?text=Hola%2C%20vengo%20de%20la%20web%20de%20CISLED%20y%20quiero%20consultar."
+           class="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-white bg-[var(--accent)] hover:opacity-90 text-sm ml-2">
+          WhatsApp <span aria-hidden="true">→</span>
+        </a>
       </div>
-      <a href="https://wa.me/5493512294292?text=Hola%2C%20vengo%20de%20la%20web%20de%20CISLED%20y%20quiero%20consultar."
-         class="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-white bg-[var(--accent)] hover:opacity-90 text-sm">
-        WhatsApp
-        <span aria-hidden="true">→</span>
-      </a>
+
+      <button id="menu-btn" class="md:hidden text-2xl text-slate-700 focus:outline-none p-2">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b shadow-lg flex-col p-4 gap-4">
+      <a href="#servicios" class="block py-2 border-b border-slate-100 text-slate-700">Servicios</a>
+      <a href="#precios" class="block py-2 border-b border-slate-100 text-slate-700">Precios</a>
+      <a href="#galeria" class="block py-2 border-b border-slate-100 text-slate-700">Galería</a>
+      <a href="#turnos" class="block py-2 border-b border-slate-100 text-slate-700">Turnos</a>
+      <a href="#remoto" class="block py-2 border-b border-slate-100 text-slate-700">Soporte Remoto</a>
+      <a href="#contacto" class="block py-2 text-slate-700">Contacto y FAQ</a>
     </div>
   </header>
 
@@ -258,7 +274,6 @@
     </div>
   </section>
 
-
   <section id="galeria" class="max-w-6xl mx-auto px-4 py-16">
     <div class="mx-auto max-w-2xl text-center">
       <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Galería</span>
@@ -354,15 +369,7 @@
         <h3 class="text-xl font-semibold">Mapa y zonas</h3>
         <p class="text-sm text-slate-600">Atendemos Córdoba Capital y alrededores.</p>
         <div class="aspect-video rounded-xl overflow-hidden shadow-sm">
-          <iframe 
-            src="https://maps.google.com/maps?q=Luis+Braile+1546%2C+C%C3%B3rdoba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5710.997829935286!2d-64.16540601234823!3d-31.430813263147417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ca36781d9e20a53%3A0x961448643d920e0f!2sCisled%20Computaci%C3%B3n!5e1!3m2!1ses!2sar!4v1766653080684!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -410,7 +417,26 @@
   </footer>
 
   <script>
-    // Smooth anchor scroll for better UX
+    // 1. Lógica para el menú hamburguesa (NUEVO)
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+            });
+        });
+    }
+
+    // 2. Smooth anchor scroll original
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const id = a.getAttribute('href').slice(1);
