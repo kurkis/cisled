@@ -1,39 +1,49 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CISLED Computación</title>
-  <meta name="description" content="CISLED: Soporte técnico, reparación y optimización de PCs y notebooks en Córdoba.">
+  
+  <title>Reparación de PC en Córdoba Capital | CISLED Computación</title>
+  <meta name="description" content="Servicio técnico de PC y notebooks en Córdoba. Diagnóstico sin cargo, limpieza, formateo y upgrades. Garantía por escrito. Reservá tu turno online.">
+  <meta name="keywords" content="reparación pc córdoba, arreglo notebook, servicio técnico, limpieza pc gamer, formateo, disco solido, cisled, barrio crisol">
 
-  <meta property="og:title" content="CISLED Computación - Soporte técnico en Córdoba">
-  <meta property="og:description" content="Reparación de PC y notebooks, mantenimiento, upgrades y soporte remoto en Córdoba Capital.">
-  <meta property="og:image" content="Cisledlogo.png">
+  <meta property="og:title" content="CISLED Computación - Reservá tu turno online">
+  <meta property="og:description" content="Reparación de PC y notebooks con turnos disponibles esta semana. Presupuesto sin cargo.">
+  <meta property="og:image" content="https://cisled.online/Cisledlogo.png"> 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cisled.online/">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CISLED Computación - Soporte técnico en Córdoba">
-  <meta name="twitter:description" content="Soporte técnico, reparación y optimización de PCs y notebooks. Atención local y remota.">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="icon" href="logosolo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
   <style>
+    /* El azul de marca es #0f1d40 | Naranja es #ff6a00 */
     :root{ --brand:#0f1d40; --accent:#ff6a00; }
     body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    .chip{ background:linear-gradient(135deg, #ff7a1a, #ff5400); }
+    /* Animaciones */
+    @keyframes pulse-border {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(255, 106, 0, 0); }
+    }
+    .pulse-border { animation: pulse-border 2s infinite; }
   </style>
 </head>
 <body class="bg-white text-slate-900">
 
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b relative">
+  <div class="md:hidden fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 flex items-center justify-between shadow-lg">
+    <span class="text-sm font-medium">⏰ Turnos disponibles hoy</span>
+    <a href="#reserva-rapida" class="bg-white text-orange-600 px-3 py-1 rounded-lg text-sm font-bold">Reservar</a>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b mt-10 md:mt-0">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       
       <a href="#inicio" class="flex items-center gap-3">
-        <img src="Cisledlogo.png" alt="CISLED" class="h-10 w-10 rounded-xl object-contain" />
+        <img src="Cisledlogo.png" alt="CISLED Logo" class="h-10 w-10 rounded-xl object-contain" />
         <div class="leading-tight">
           <div class="font-extrabold tracking-tight">CISLED</div>
           <div class="text-xs text-slate-500 -mt-0.5">Computación</div>
@@ -41,25 +51,23 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#servicios" class="hover:opacity-80">Servicios</a>
-        <a href="#precios" class="hover:opacity-80">Precios</a>
-        <a href="#galeria" class="hover:opacity-80">Galería</a>
-        <a href="#turnos" class="hover:opacity-80">Turnos</a>
-        <a href="#remoto" class="hover:opacity-80">Soporte remoto</a>
-        <a href="#contacto" class="hover:opacity-80">Contacto</a>
-        <a href="#faq" class="hover:opacity-80">FAQ</a>
+        <a href="#servicios" class="hover:text-orange-600 transition">Servicios</a>
+        <a href="#precios" class="hover:text-orange-600 transition">Precios</a>
+        <a href="#galeria" class="hover:text-orange-600 transition">Galería</a>
+        <a href="#remoto" class="hover:text-orange-600 transition">Soporte remoto</a>
+        <a href="#contacto" class="hover:text-orange-600 transition">Contacto</a>
+        <a href="#faq" class="hover:text-orange-600 transition">FAQ</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-2 mr-2">
-        <a href="https://www.instagram.com/cisledcba/" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram text-xl text-slate-700"></i></a>
-        <a href="https://www.facebook.com/cisled" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook text-xl text-slate-700"></i></a>
-        <a href="https://wa.me/5493512294292?text=Hola%2C%20vengo%20de%20la%20web%20de%20CISLED%20y%20quiero%20consultar."
-           class="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-white bg-[var(--accent)] hover:opacity-90 text-sm ml-2">
-          WhatsApp <span aria-hidden="true">→</span>
+        <a href="https://www.instagram.com/cisledcba/" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 transition" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram text-xl text-[#0f1d40]"></i></a>
+        <a href="https://www.facebook.com/cisled" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 transition" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook text-xl text-[#0f1d40]"></i></a>
+        <a href="#reserva-rapida" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-white bg-[var(--accent)] hover:bg-orange-600 transition text-sm ml-2 pulse-border shadow-lg shadow-orange-200">
+          📅 Reservar turno
         </a>
       </div>
 
-      <button id="menu-btn" class="md:hidden text-2xl text-slate-700 focus:outline-none p-2">
+      <button id="menu-btn" class="md:hidden text-2xl text-[#0f1d40] focus:outline-none p-2">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
@@ -68,7 +76,6 @@
       <a href="#servicios" class="block py-2 border-b border-slate-100 text-slate-700">Servicios</a>
       <a href="#precios" class="block py-2 border-b border-slate-100 text-slate-700">Precios</a>
       <a href="#galeria" class="block py-2 border-b border-slate-100 text-slate-700">Galería</a>
-      <a href="#turnos" class="block py-2 border-b border-slate-100 text-slate-700">Turnos</a>
       <a href="#remoto" class="block py-2 border-b border-slate-100 text-slate-700">Soporte Remoto</a>
       <a href="#contacto" class="block py-2 text-slate-700">Contacto y FAQ</a>
     </div>
@@ -76,380 +83,632 @@
 
   <section id="inicio" class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 opacity-20 bg-gradient-to-b from-orange-400 via-orange-500 to-transparent"></div>
-    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <span class="inline-block border rounded-full px-3 py-1 text-xs text-slate-600 mb-4">Córdoba Capital</span>
-        <h1 class="text-4xl md:text-6xl font-black leading-tight">
-          <span class="text-[var(--brand)]">CISLED</span> <span class="text-[var(--accent)]">Computación</span>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-block border rounded-full px-3 py-1 text-xs text-slate-600 bg-white/50 backdrop-blur">Córdoba Capital</span>
+          <span class="inline-block bg-orange-100 text-orange-700 rounded-full px-3 py-1 text-xs font-medium animate-pulse">🔥 Turnos disponibles hoy</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black leading-tight text-slate-900">
+          Reservá tu turno técnico en <span class="text-[var(--accent)]">2 minutos</span>
         </h1>
         <p class="mt-4 text-lg text-slate-600">
-          Soporte técnico, reparación y optimización de PCs y notebooks. Mantenimiento, upgrades y solución de problemas con garantía. Atención local y remota.
+          Reparación y mantenimiento de PC y notebooks en Córdoba. Diagnóstico honesto y garantía por escrito.
         </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://wa.me/5493512294292?text=Hola%2C%20necesito%20ayuda%20con%20mi%20PC%20o%20Notebook."
-             class="inline-flex items-center justify-center rounded-xl px-4 py-2 bg-[var(--accent)] text-white font-medium">Escribir por WhatsApp</a>
-          <a href="#servicios" class="inline-flex items-center justify-center rounded-xl px-4 py-2 bg-slate-100 text-slate-900 font-medium">Ver servicios</a>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#reserva-rapida" class="inline-flex items-center justify-center rounded-xl px-6 py-3 bg-[var(--accent)] text-white font-semibold text-lg hover:bg-orange-600 transition shadow-lg shadow-orange-200">
+            📅 Reservar ahora
+          </a>
+          <a href="#servicios" class="inline-flex items-center justify-center rounded-xl px-6 py-3 bg-slate-100 text-slate-900 font-medium hover:bg-slate-200 transition">Ver servicios</a>
         </div>
-        <div class="mt-6 flex items-center gap-4 text-sm text-slate-600">
-          <div>✔ Garantía</div>
-          <div>✔ Entrega rápida</div>
-          <div>✔ +10 años de experiencia</div>
+        <div class="mt-8 grid grid-cols-3 gap-4 text-sm text-slate-600">
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold text-[#0f1d40]">✓</span>
+            <span class="mt-1">Diagnóstico sin cargo</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold text-[#0f1d40]">✓</span>
+            <span class="mt-1">Garantía Escrita</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold text-[#0f1d40]">✓</span>
+            <span class="mt-1">+10 años experiencia</span>
+          </div>
         </div>
       </div>
-      <div class="relative">
+      <div class="relative mt-8 md:mt-0">
         <div class="absolute -inset-2 -z-10 rounded-3xl bg-orange-400/30 blur-2xl"></div>
-        <div class="rounded-3xl shadow-xl overflow-hidden border">
-          <img src="baner.png" alt="Hardware" class="w-full h-full object-cover" />
+        <div class="rounded-3xl shadow-xl overflow-hidden border bg-slate-100">
+          <img src="baner.png" alt="Reparación de Hardware CISLED" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400?text=CISLED+Computacion'" />
         </div>
       </div>
     </div>
   </section>
 
-  <section id="servicios" class="max-w-6xl mx-auto px-4 py-16">
+  <section id="reserva-rapida" class="bg-gradient-to-br from-slate-50 to-orange-50 py-16 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <span class="inline-block bg-orange-100 text-orange-700 rounded-full px-3 py-1 text-xs font-medium mb-3">Proceso simple</span>
+        <h2 class="text-3xl md:text-4xl font-bold">Reservá tu turno en 3 pasos</h2>
+        <p class="mt-3 text-slate-600">Te confirmamos por WhatsApp en menos de 1 hora (lun-sáb)</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-8">
+        <div class="grid md:grid-cols-3 gap-6 mb-8 border-b pb-6">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold flex-shrink-0">1</div>
+            <div class="text-sm">
+              <div class="font-semibold">Elegí el servicio</div>
+              <div class="text-slate-500">Y tu horario preferido</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold flex-shrink-0">2</div>
+            <div class="text-sm">
+              <div class="font-semibold">Te contactamos</div>
+              <div class="text-slate-500">Confirmamos por WhatsApp</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold flex-shrink-0">3</div>
+            <div class="text-sm">
+              <div class="font-semibold">¡Listo!</div>
+              <div class="text-slate-500">Traés tu equipo</div>
+            </div>
+          </div>
+        </div>
+
+        <form id="reservation-form" class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-2">Nombre *</label>
+            <input type="text" name="name" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition" placeholder="Tu nombre completo" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">WhatsApp * <span class="text-xs text-slate-500">(para confirmar)</span></label>
+            <input type="tel" name="phone" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition" placeholder="Ej: 351 123 4567" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">Servicio que necesitás *</label>
+            <select name="service" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition bg-white">
+              <option value="">Seleccioná un servicio</option>
+              <option value="diagnostico">Diagnóstico y limpieza</option>
+              <option value="mantenimiento">Mantenimiento preventivo</option>
+              <option value="optimizacion">Optimización Windows/Linux</option>
+              <option value="upgrade">Upgrade SSD/RAM</option>
+              <option value="reparacion">Reparación de notebook</option>
+              <option value="armado">Armado PC gamer/creativo</option>
+              <option value="otro">Otro (especificar en comentarios)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">Día preferido * <span class="text-xs text-slate-500">(Lun a Sáb)</span></label>
+            <input type="date" name="date" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">Horario preferido *</label>
+            <select name="time" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition bg-white">
+              <option value="">Seleccioná horario</option>
+              <option value="morning">Mañana (9:00 - 12:00)</option>
+              <option value="afternoon">Tarde (12:00 - 17:00)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">Email (opcional)</label>
+            <input type="email" name="email" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition" placeholder="tu@email.com" />
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium mb-2">Comentarios / Falla del equipo</label>
+            <textarea name="comments" rows="3" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition" placeholder="Contanos brevemente qué problema tenés o qué necesitás..."></textarea>
+          </div>
+
+          <div class="md:col-span-2 mt-2">
+            <button type="submit" class="w-full bg-[var(--accent)] text-white font-bold rounded-xl px-6 py-4 hover:opacity-90 transition flex items-center justify-center gap-2 shadow-md shadow-orange-200">
+              <i class="fa-solid fa-calendar-check"></i>
+              Reservar mi turno por WhatsApp
+            </button>
+            <p class="text-xs text-slate-500 text-center mt-3">
+              Al hacer clic se abrirá WhatsApp con los datos listos para enviar.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-8 bg-white rounded-xl border p-6 shadow-sm">
+        <h3 class="font-semibold mb-4 text-center">📅 Disponibilidad aproximada (Próximos días)</h3>
+        <div id="dynamic-calendar" class="grid grid-cols-3 md:grid-cols-6 gap-3 text-center text-sm">
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="max-w-6xl mx-auto px-4 py-16 scroll-mt-20">
     <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Servicios</span>
-      <h2 class="text-3xl md:text-4xl font-bold">Nos destacamos</h2>
-      <p class="mt-3 text-slate-600">Soluciones claras, presupuestos honestos y resultados medibles.</p>
+      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3 font-semibold text-slate-600">Nuestros Servicios</span>
+      <h2 class="text-3xl md:text-4xl font-bold">Soluciones Profesionales</h2>
+      <p class="mt-3 text-slate-600">Presupuestos honestos y resultados medibles.</p>
     </div>
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="rounded-2xl border p-6">
-        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-          <i class="fa-solid fa-magnifying-glass text-xl"></i>
+      
+      <div class="rounded-2xl border p-6 hover:shadow-lg transition bg-white group">
+        <div class="w-14 h-14 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+          <i class="fa-solid fa-magnifying-glass text-2xl"></i>
         </div>
-        <h3 class="font-semibold text-lg">Diagnóstico y limpieza</h3>
-        <p class="text-sm text-slate-600 mt-1">Chequeo completo, limpieza interna, reemplazo de pasta térmica y pads.</p>
+        <h3 class="font-bold text-lg">Diagnóstico y limpieza</h3>
+        <p class="text-sm text-slate-600 mt-2">Chequeo completo, limpieza profunda interna, reemplazo de pasta térmica de alta calidad.</p>
         <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
-          <li>Mayor performance</li>
-          <li>Mejoras de temperatura</li>
-          <li>Reducción de ruido</li>
+          <li>Baja la temperatura</li>
+          <li>Reduce ruido de ventiladores</li>
+          <li>Mayor vida útil</li>
         </ul>
+        <a href="#reserva-rapida" class="inline-flex items-center gap-2 mt-4 text-sm text-orange-600 font-bold hover:underline">Reservar →</a>
       </div>
 
-      <div class="rounded-2xl border p-6">
-        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-          <i class="fa-solid fa-gauge-high text-xl"></i>
+      <div class="rounded-2xl border p-6 hover:shadow-lg transition bg-white group">
+        <div class="w-14 h-14 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+          <i class="fa-solid fa-gauge-high text-2xl"></i>
         </div>
-        <h3 class="font-semibold text-lg">Optimización de Windows/Linux</h3>
-        <p class="text-sm text-slate-600 mt-1">Aceleramos tu sistema, actualizamos tus drivers, eliminamos malware y archivos corruptos.</p>
+        <h3 class="font-bold text-lg">Optimización y Formateo</h3>
+        <p class="text-sm text-slate-600 mt-2">Instalación limpia de Windows/Linux, drivers originales y eliminación de virus.</p>
         <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
-          <li>Arranque rápido</li>
-          <li>Drivers y BIOS actualizados</li>
-          <li>Seguridad garantizada</li>
+          <li>PC más rápida</li>
+          <li>Sin programas basura</li>
+          <li>Backup de datos opcional</li>
         </ul>
+        <a href="#reserva-rapida" class="inline-flex items-center gap-2 mt-4 text-sm text-orange-600 font-bold hover:underline">Reservar →</a>
       </div>
 
-      <div class="rounded-2xl border p-6">
-        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-          <i class="fa-solid fa-microchip text-xl"></i>
+      <div class="rounded-2xl border p-6 hover:shadow-lg transition bg-white group">
+        <div class="w-14 h-14 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+          <i class="fa-solid fa-microchip text-2xl"></i>
         </div>
-        <h3 class="font-semibold text-lg">Upgrades SSD/RAM</h3>
-        <p class="text-sm text-slate-600 mt-1">Asesoramiento y cambio a SSD NVMe/SATA y ampliación de memoria y clonación de disco sin pérdida de datos.</p>
+        <h3 class="font-bold text-lg">Upgrade SSD y RAM</h3>
+        <p class="text-sm text-slate-600 mt-2">La mejor inversión. Cambiamos tu disco lento por uno sólido (SSD) y sumamos memoria.</p>
         <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
-          <li>Mejora de rendimiento y velocidad </li>
-          <li>Actualización de hardware segura</li>
-          <li>Más FPS en juegos y mayor productividad diaria</li>
+          <li>Inicio en segundos</li>
+          <li>Programas abren al instante</li>
+          <li>Clonado de disco (sin perder nada)</li>
         </ul>
+        <a href="#reserva-rapida" class="inline-flex items-center gap-2 mt-4 text-sm text-orange-600 font-bold hover:underline">Reservar →</a>
       </div>
 
-      <div class="rounded-2xl border p-6">
-        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-          <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+      <div class="rounded-2xl border p-6 hover:shadow-lg transition bg-white group">
+        <div class="w-14 h-14 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+          <i class="fa-solid fa-screwdriver-wrench text-2xl"></i>
         </div>
-        <h3 class="font-semibold text-lg">Reparación de notebooks</h3>
-        <p class="text-sm text-slate-600 mt-1">Teclado, pantalla, bisagras, batería, cargadores y conectores.</p>
+        <h3 class="font-bold text-lg">Reparación de Notebooks</h3>
+        <p class="text-sm text-slate-600 mt-2">Cambio de pantallas, teclados, reparación de bisagras, jack de carga y baterías.</p>
+        <a href="#reserva-rapida" class="inline-flex items-center gap-2 mt-4 text-sm text-orange-600 font-bold hover:underline">Reservar →</a>
       </div>
 
-      <div class="rounded-2xl border p-6">
-        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-          <i class="fa-solid fa-gamepad text-xl"></i>
+      <div class="rounded-2xl border p-6 hover:shadow-lg transition bg-white group">
+        <div class="w-14 h-14 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+          <i class="fa-solid fa-gamepad text-2xl"></i>
         </div>
-        <h3 class="font-semibold text-lg">Armado gamer/creativo</h3>
-        <p class="text-sm text-slate-600 mt-1">Diseño de builds, airflow, cableado y tuning de rendimiento.</p>
+        <h3 class="font-bold text-lg">Armado de PC Gamer</h3>
+        <p class="text-sm text-slate-600 mt-2">Asesoramiento en componentes, armado prolijo con gestión de cables y test de stress.</p>
+        <a href="#reserva-rapida" class="inline-flex items-center gap-2 mt-4 text-sm text-orange-600 font-bold hover:underline">Reservar →</a>
       </div>
 
-      <div class="rounded-2xl border p-6">
-        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-          <i class="fa-solid fa-life-ring text-xl"></i>
+      <div class="rounded-2xl border p-6 hover:shadow-lg transition bg-white group">
+        <div class="w-14 h-14 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+          <i class="fa-solid fa-life-ring text-2xl"></i>
         </div>
-        <h3 class="font-semibold text-lg">Soporte remoto</h3>
-        <p class="text-sm text-slate-600 mt-1">Asistencia a distancia mediante AnyDesk o Zoom para resolver problemas de software sin moverte de casa.</p>
+        <h3 class="font-bold text-lg">Soporte Remoto</h3>
+        <p class="text-sm text-slate-600 mt-2">Solución de problemas de software a distancia vía AnyDesk. Ideal urgencias de soft.</p>
+        <a href="#reserva-rapida" class="inline-flex items-center gap-2 mt-4 text-sm text-orange-600 font-bold hover:underline">Reservar →</a>
       </div>
     </div>
   </section>
 
-  <section id="precios" class="max-w-6xl mx-auto px-4 py-16">
+  <section id="precios" class="max-w-6xl mx-auto px-4 py-16 bg-slate-50/50 rounded-3xl my-8 scroll-mt-20">
     <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Precios</span>
-      <h2 class="text-3xl md:text-4xl font-bold">Precios y Presupuestos</h2>
+      <span class="inline-block bg-white border rounded-full px-3 py-1 text-xs mb-3 font-semibold text-slate-600">Precios Referenciales</span>
+      <h2 class="text-3xl md:text-4xl font-bold">Sin Sorpresas</h2>
+      <p class="mt-3 text-slate-600">El diagnóstico es sin cargo al realizar el trabajo.</p>
     </div>
     <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="rounded-2xl border p-6">
-        <div class="flex items-center justify-between">
-          <h3 class="font-semibold">Service del Sistema</h3><span class="text-xs bg-slate-100 px-2 py-0.5 rounded">CISLED</span>
-        </div>
-        <div class="text-2xl font-bold mt-1">A consultar</div>
-        <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
-          <li>Instalación del Sistema Operativo</li>
-          <li>Drivers y actualizaciones</li>
-          <li>Chequeos SMART y temperaturas</li>
-        </ul>
-        <a href="https://wa.me/5493512294292?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20Puesta%20a%20punto."
-           class="inline-flex mt-3 rounded-xl px-3 py-2 bg-[var(--accent)] text-white text-sm">Pedir presupuesto</a>
-      </div>
-      <div class="rounded-2xl border p-6 ring-1 ring-orange-300">
-        <div class="flex items-center justify-between">
-          <h3 class="font-semibold">Mantenimiento Preventivo</h3><span class="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Recomendado</span>
-        </div>
-        <div class="text-2xl font-bold mt-1">A consultar</div>
-        <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
-          <li>Desarme y limpieza</li>
-          <li>Reemplazo de pasta/pads</li>
-          <li>Curva de ventilación</li>
-        </ul>
-        <a href="https://wa.me/5493512294292?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20Mantenimiento%20completo."
-           class="inline-flex mt-3 rounded-xl px-3 py-2 bg-[var(--accent)] text-white text-sm">Pedir presupuesto</a>
-      </div>
-      <div class="rounded-2xl border p-6">
-        <div class="flex items-center justify-between">
-          <h3 class="font-semibold">Upgrade SSD/RAM</h3><span class="text-xs bg-slate-100 px-2 py-0.5 rounded">CISLED</span>
-        </div>
-        <div class="text-2xl font-bold mt-1">A consultar</div>
-        <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
-          <li>Compatibilidad garantizada</li>
-          <li>Clonado opcional</li>
-          <li>Pruebas de rendimiento</li>
-        </ul>
-        <a href="https://wa.me/5493512294292?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20Upgrade%20SSD/RAM."
-           class="inline-flex mt-3 rounded-xl px-3 py-2 bg-[var(--accent)] text-white text-sm">Pedir presupuesto</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="opiniones" class="bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4 py-16">
-      <div class="mx-auto max-w-2xl text-center">
-        <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Opiniones</span>
-        <h2 class="text-3xl md:text-4xl font-bold">Opiniones de clientes</h2>
-        <p class="mt-3 text-slate-600">Estas son algunas reseñas reales de personas que confiaron en CISLED Computación.</p>
-      </div>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <article class="rounded-2xl border bg-white p-6 shadow-sm">
-          <div class="flex items-center gap-2 text-amber-400 text-sm mb-2">
-            <span>★★★★★</span>
-            <span class="text-slate-500 text-xs">Reseña en Google</span>
-          </div>
-          <p class="text-sm text-slate-700">
-            “Me ha asistido con todos mis elementos de computación y siempre ha sido con excelente resultado,
-            cumpliendo en tiempo y forma lo solicitado. Muy recomendable.”
-          </p>
-          <p class="mt-3 text-xs font-medium text-slate-500">José L.</p>
-        </article>
-
-        <article class="rounded-2xl border bg-white p-6 shadow-sm">
-          <div class="flex items-center gap-2 text-amber-400 text-sm mb-2">
-            <span>★★★★★</span>
-            <span class="text-slate-500 text-xs">Reseña en Google</span>
-          </div>
-          <p class="text-sm text-slate-700">
-            “Muy buena atención. 100% confiable. Entrega en los tiempos acordados. Gracias por el buen trabajo que realizás.”
-          </p>
-          <p class="mt-3 text-xs font-medium text-slate-500">Ardichi</p>
-        </article>
-
-        <article class="rounded-2xl border bg-white p-6 shadow-sm">
-          <div class="flex items-center gap-2 text-amber-400 text-sm mb-2">
-            <span>★★★★★</span>
-            <span class="text-slate-500 text-xs">Reseña en Google</span>
-          </div>
-          <p class="text-sm text-slate-700">
-            “Excelente trabajo de cambio de disco duro y potenciación de memoria, a un precio justo y muy rápido.
-            Es un gusto tener la PC como nueva.”
-          </p>
-          <p class="mt-3 text-xs font-medium text-slate-500">Claudia M.</p>
-        </article>
-      </div>
-      <p class="mt-6 text-center text-xs text-slate-500">
-        Podés ver todas las opiniones buscando “Cisled Computación” en Google Maps.
-      </p>
-    </div>
-  </section>
-
-  <section id="galeria" class="max-w-6xl mx-auto px-4 py-16">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Galería</span>
-      <h2 class="text-3xl md:text-4xl font-bold">Trabajos y resultados</h2>
-      <p class="mt-3 text-slate-600">Un vistazo a lo que entregamos</p>
-    </div>
-    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <picture><img src="Galeria1.jpg" class="rounded-xl border" alt="Limpieza interna de PC y cambio de pasta térmica" loading="lazy" width="800" height="600" /></picture>
-      <picture><img src="Galeria2.jpg" class="rounded-xl border" alt="Armado de PC gamer lista para usar" loading="lazy" width="800" height="600" /></picture>
-      <picture><img src="Galeria3.JPG" class="rounded-xl border" alt="Reparación y mantenimiento de notebook" loading="lazy" width="800" height="600" /></picture>
-      <picture><img src="Galeria4.JPG" class="rounded-xl border" alt="Actualización con SSD y mejora de rendimiento" loading="lazy" width="800" height="600" /></picture>
-    </div>
-  </section>
-
-  <section id="turnos" class="max-w-6xl mx-auto px-4 py-16">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Turnos</span>
-      <h2 class="text-3xl md:text-4xl font-bold">Reservá en 3 minutos</h2>
-      <p class="mt-3 text-slate-600">Proceso simple y claro</p>
-    </div>
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <div class="rounded-2xl border p-6 space-y-3">
-        <div class="flex gap-3"><span class="px-2 py-1 rounded bg-slate-100 text-xs">1</span> Contanos el problema o servicio que buscás</div>
-        <div class="flex gap-3"><span class="px-2 py-1 rounded bg-slate-100 text-xs">2</span> Te enviamos presupuesto orientativo</div>
-        <div class="flex gap-3"><span class="px-2 py-1 rounded bg-slate-100 text-xs">3</span> Coordinamos retiro/taller o remoto</div>
-        <div class="flex gap-3"><span class="px-2 py-1 rounded bg-slate-100 text-xs">4</span> Entrega con pruebas y garantía</div>
-        <a href="https://wa.me/5493512294292?text=Hola%2C%20quiero%20reservar%20un%20turno."
-           class="inline-flex mt-2 rounded-xl px-3 py-2 bg-[var(--accent)] text-white text-sm w-fit">Pedir turno por WhatsApp</a>
-      </div>
-      <div class="rounded-2xl border p-6 text-sm text-slate-700">
-        <div class="font-medium mb-2">Horarios</div>
-        Lun–Sáb 9:00–16:00
-        <div class="mt-4 font-medium mb-2">Cobertura</div>
-        Córdoba Capital y alrededores.
-      </div>
-    </div>
-  </section>
-
-  <section id="remoto" class="max-w-6xl mx-auto px-4 py-16">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Soporte remoto</span>
-      <h2 class="text-3xl md:text-4xl font-bold">Te ayudamos a distancia</h2>
-    </div>
-    <div class="mt-8 grid sm:grid-cols-2 gap-4">
-      <div class="rounded-xl border p-5 text-sm">1. Coordinamos día y hora</div>
-      <div class="rounded-xl border p-5 text-sm">2. Instalás AnyDesk y nos compartís el ID</div>
-      <div class="rounded-xl border p-5 text-sm">3. Diagnóstico y resolución en vivo</div>
-      <div class="rounded-xl border p-5 text-sm">4. Comprobamos resultados y cerramos sesión</div>
-    </div>
-    <a href="https://wa.me/5493512294292?text=Hola%2C%20necesito%20soporte%20remoto."
-       class="inline-flex mt-6 rounded-xl px-3 py-2 bg-[var(--accent)] text-white text-sm">Solicitar soporte remoto</a>
-  </section>
-
-  <section id="contacto" class="max-w-6xl mx-auto px-4 py-16">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">Contacto</span>
-      <h2 class="text-3xl md:text-4xl font-bold">Escribinos</h2>
-      <p class="mt-3 text-slate-600">Respondemos en el día hábil</p>
-    </div>
-    <div class="mt-10 grid md:grid-cols-2 gap-8">
       
-      <form action="https://formspree.io/f/xnjakyed" method="POST" class="rounded-2xl border p-6 grid gap-3">
-        <label class="text-sm">Nombre
-          <input type="text" name="name" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Tu nombre" required />
-        </label>
-        <label class="text-sm">Email
-          <input type="email" name="email" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="tu@email.com" required />
-        </label>
-        <label class="text-sm">Mensaje
-          <textarea name="message" rows="5" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Contanos qué necesitás…" required></textarea>
-        </label>
-        <div class="flex gap-3">
-          <button type="submit" class="rounded-xl px-4 py-2 bg-slate-900 text-white hover:bg-slate-800 transition">Enviar Consulta</button>
-          <a href="https://wa.me/5493512294292?text=Hola%2C%20quiero%20hacer%20una%20consulta." class="rounded-xl px-4 py-2 bg-slate-100 hover:bg-slate-200 transition">WhatsApp</a>
+      <div class="rounded-2xl border bg-white p-6 shadow-sm">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Service Sistema</h3>
         </div>
-        
-        <div class="grid gap-1 text-sm text-slate-600 mt-2">
-          <div>📍 Luis Braile 1546, X5014 Córdoba</div>
-          <div>✉️ cisled.computacion@gmail.com</div>
-          <div>🕒 Horarios: Lun–Sáb 9:00–16:00</div>
-          <div class="flex items-center gap-4 mt-2">
-            <a href="https://www.instagram.com/cisledcba/" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Instagram" target="_blank" rel="noopener">
-              <i class="fa-brands fa-instagram text-xl text-slate-700"></i>
-            </a>
-            <a href="https://www.facebook.com/cisled" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Facebook" target="_blank" rel="noopener">
-              <i class="fa-brands fa-facebook text-xl text-slate-700"></i>
-            </a>
+        <div class="text-3xl font-black mt-2 tracking-tight">Desde $29.000</div>
+        <p class="text-xs text-slate-500 mt-1">Precio final mano de obra</p>
+        <hr class="my-4 border-slate-100">
+        <ul class="text-sm text-slate-700 list-disc pl-5 space-y-2">
+          <li>Instalación Windows/Linux/MacOS</li>
+          <li>Drivers y Pack Office</li>
+          <li>Programas Básicos</li>
+          <li>Optimización de inicio</li>
+        </ul>
+        <a href="#reserva-rapida" class="inline-flex mt-6 rounded-xl px-4 py-3 bg-[var(--accent)] hover:bg-orange-700 text-white text-sm font-bold w-full justify-center transition">
+          Reservar turno
+        </a>
+      </div>
+
+      <div class="rounded-2xl border-2 border-orange-400 bg-white p-6 relative shadow-lg scale-105 z-10">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wide">
+          Más Buscado
+        </div>
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold text-orange-700">Mantenimiento Full</h3>
+        </div>
+        <div class="text-3xl font-black mt-2 tracking-tight">Desde $39.000</div>
+        <p class="text-xs text-slate-500 mt-1">Precio final mano de obra</p>
+        <hr class="my-4 border-orange-100">
+        <ul class="text-sm text-slate-700 list-disc pl-5 space-y-2">
+          <li>Limpieza física profunda</li>
+          <li>Cambio pasta térmica (Artic Cooling)</li>
+          <li>Lubricación de coolers</li>
+          <li>Chequeo de temperaturas</li>
+        </ul>
+        <a href="#reserva-rapida" class="inline-flex mt-6 rounded-xl px-4 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg text-white text-sm font-bold w-full justify-center transition">
+          Reservar turno
+        </a>
+      </div>
+
+      <div class="rounded-2xl border bg-white p-6 shadow-sm">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Upgrade / Hardware</h3>
+        </div>
+        <div class="text-3xl font-black mt-2 tracking-tight">Desde $19.000</div>
+        <p class="text-xs text-slate-500 mt-1">+ costo de componentes</p>
+        <hr class="my-4 border-slate-100">
+        <ul class="text-sm text-slate-700 list-disc pl-5 space-y-2">
+          <li>Instalación de SSD/RAM</li>
+          <li>Clonado de sistema (hdd/ssd)</li>
+          <li>Overclocking</li>
+          <li>Test de compatibilidad</li>
+        </ul>
+        <a href="#reserva-rapida" class="inline-flex mt-6 rounded-xl px-4 py-3 bg-[var(--accent)] hover:bg-orange-700 text-white text-sm font-bold w-full justify-center transition">
+          Reservar turno
+        </a>
+      </div>
+
+    </div>
+    <p class="text-center text-xs text-slate-500 mt-8 italic">
+      * Precios sujetos a cambios sin previo aviso. Consultar por modelos específicos.
+    </p>
+  </section>
+
+  <section id="opiniones" class="bg-slate-50 border-y py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mx-auto max-w-2xl text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold">Nuestros clientes opinan</h2>
+        <p class="mt-2 text-slate-600">Reseñas reales verificadas en Google</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="rounded-2xl border bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
+          <p class="text-sm text-slate-700 italic">
+            "Reservé online un martes y el miércoles ya tenía mi notebook lista. El mantenimiento quedó perfecto, ahora no hace ruido y va rapidísimo."
+          </p>
+          <div class="mt-4 flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600">JL</div>
+            <div class="text-xs font-bold text-slate-900">José L.</div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-sm text-slate-700 italic">
+            "Muy buena atención. 100% confiable. Entrega en los tiempos acordados. Gracias por el buen trabajo que realizás."
+          </p>
+          <div class="mt-4 flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600">A</div>
+            <div class="text-xs font-bold text-slate-900">Ardichi</div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-sm text-slate-700 italic">
+            "Excelente trabajo de cambio de disco duro y potenciación de memoria, a un precio justo y muy rápido. Es un gusto tener la PC como nueva."
+          </p>
+          <div class="mt-4 flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600">CM</div>
+            <div class="text-xs font-bold text-slate-900">Claudia M.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="max-w-6xl mx-auto px-4 py-16 scroll-mt-20">
+    <div class="mx-auto max-w-2xl text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold">Trabajos Recientes</h2>
+      <p class="mt-2 text-slate-600">Antes y después</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-xl overflow-hidden border aspect-square group relative">
+             <img src="Galeria1.jpg" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Limpieza PC" onerror="this.src='https://placehold.co/400x400/eee/999?text=Limpieza'">
+             <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition">Limpieza Integral</div>
         </div>
+        <div class="rounded-xl overflow-hidden border aspect-square group relative">
+             <img src="Galeria2.jpg" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="PC Gamer" onerror="this.src='https://placehold.co/400x400/eee/999?text=Gamer'">
+             <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition">Armado Gamer</div>
+        </div>
+        <div class="rounded-xl overflow-hidden border aspect-square group relative">
+             <img src="Galeria3.JPG" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Notebook Reparacion" onerror="this.src='https://placehold.co/400x400/eee/999?text=Notebook'">
+             <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition">Reparación Notebook</div>
+        </div>
+        <div class="rounded-xl overflow-hidden border aspect-square group relative">
+             <img src="Galeria4.JPG" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Upgrade SSD" onerror="this.src='https://placehold.co/400x400/eee/999?text=SSD'">
+             <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition">Upgrade SSD</div>
+        </div>
+    </div>
+  </section>
+
+  <section id="remoto" class="max-w-6xl mx-auto px-4 py-16 bg-blue-50/50 rounded-3xl mb-16 scroll-mt-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+         <span class="inline-block bg-blue-100 text-blue-700 rounded-full px-3 py-1 text-xs font-bold mb-3">Sin moverte de casa</span>
+         <h2 class="text-3xl font-bold mb-4">Soporte Remoto a Distancia</h2>
+         <p class="text-slate-600 mb-6">Si tenés internet, podemos arreglar problemas de software (virus, programas lentos, instalación de Office, drivers) mediante AnyDesk o TeamViewer.</p>
+         
+         <div class="space-y-4">
+            <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-blue-800 shrink-0">1</div>
+                <div><div class="font-bold">Coordinamos turno</div><div class="text-sm text-slate-500">Por WhatsApp</div></div>
+            </div>
+            <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-blue-800 shrink-0">2</div>
+                <div><div class="font-bold">Te conectás</div><div class="text-sm text-slate-500">Te ayudamos a instalar AnyDesk</div></div>
+            </div>
+            <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-blue-800 shrink-0">3</div>
+                <div><div class="font-bold">Pagás al finalizar</div><div class="text-sm text-slate-500">Por transferencia o MercadoPago</div></div>
+            </div>
+         </div>
+
+         <a href="#reserva-rapida" class="inline-flex items-center gap-2 rounded-xl px-6 py-3 bg-slate-900 text-white font-medium mt-8">
+            <i class="fa-solid fa-headset"></i> Solicitar soporte remoto
+         </a>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-lg border text-center">
+         <i class="fa-solid fa-desktop text-6xl text-slate-200 mb-4"></i>
+         <div class="font-bold text-xl">Disponible para todo el país</div>
+         <p class="text-sm text-slate-500 mt-2">Lunes a Sábado de 9:00 a 17:00 hs</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="max-w-6xl mx-auto px-4 py-16 scroll-mt-20">
+    <div class="mx-auto max-w-2xl text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold">Ubicación y Contacto</h2>
+      <p class="mt-3 text-slate-600">Córdoba Capital, Barrio Crisol</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <div class="space-y-6">
+        <div class="rounded-2xl border p-6 bg-white flex flex-col gap-4">
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot text-[#0f1d40]"></i></div>
+                <div>
+                    <div class="font-bold">Dirección</div>
+                    <div class="text-slate-600 text-sm">Luis Braile 1546, X5014 Córdoba</div>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center shrink-0"><i class="fa-brands fa-whatsapp text-[#0f1d40]"></i></div>
+                <div>
+                    <div class="font-bold">WhatsApp</div>
+                    <a href="https://wa.me/5493512294292" class="text-orange-600 hover:underline text-sm font-medium">351 229 4292</a>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center shrink-0"><i class="fa-regular fa-envelope text-[#0f1d40]"></i></div>
+                <div>
+                    <div class="font-bold">Email</div>
+                    <div class="text-slate-600 text-sm">cisled.computacion@gmail.com</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden shadow-sm border h-64 md:h-auto aspect-video">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.6793674686487!2d-64.1751859234857!3d-31.39539079524029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432981f96409405%3A0x6d8b63e8a3a0e365!2sLuis%20Braile%201546%2C%20X5000%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1709590000000!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/xnjakyed" method="POST" class="rounded-2xl border p-6 md:p-8 bg-white shadow-lg">
+        <h3 class="font-bold text-xl mb-4">¿Tenés una duda puntual?</h3>
+        <label class="block text-sm font-medium mb-2">Tu Email</label>
+        <input type="email" name="email" required class="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-orange-500 outline-none" placeholder="nombre@ejemplo.com">
+        
+        <label class="block text-sm font-medium mb-2">Consulta</label>
+        <textarea name="message" rows="4" required class="w-full border rounded-lg px-4 py-2 mb-6 focus:ring-2 focus:ring-orange-500 outline-none" placeholder="Hola, tengo una PC que..."></textarea>
+        
+        <button type="submit" class="w-full bg-slate-800 text-white font-bold rounded-xl px-4 py-3 hover:bg-slate-900 transition">Enviar Consulta por Email</button>
+        <div class="text-center mt-4 text-xs text-slate-500">O escribinos directo al WhatsApp para más velocidad.</div>
       </form>
-
-      <div class="rounded-2xl border p-6 grid gap-3">
-        <h3 class="text-xl font-semibold">Mapa y zonas</h3>
-        <p class="text-sm text-slate-600">Atendemos Córdoba Capital y alrededores.</p>
-        <div class="aspect-video rounded-xl overflow-hidden shadow-sm">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5710.997829935286!2d-64.16540601234823!3d-31.430813263147417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ca36781d9e20a53%3A0x961448643d920e0f!2sCisled%20Computaci%C3%B3n!5e1!3m2!1ses!2sar!4v1766653080684!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section id="faq" class="max-w-6xl mx-auto px-4 py-16">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs mb-3">FAQ</span>
-      <h2 class="text-3xl md:text-4xl font-bold">Preguntas frecuentes</h2>
-    </div>
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <div class="rounded-xl border p-5">
-        <div class="font-medium">¿Cuánto demora el servicio?</div>
-        <div class="text-sm text-slate-600 mt-1">Diagnóstico en 24–48 h hábiles. Mantenimiento completo: 48–72 h según repuestos.</div>
-      </div>
-      <div class="rounded-xl border p-5">
-        <div class="font-medium">¿Tienen garantía?</div>
-        <div class="text-sm text-slate-600 mt-1">Sí, garantía por escrito sobre mano de obra y repuestos instalados.</div>
-      </div>
-      <div class="rounded-xl border p-5">
-        <div class="font-medium">¿Trabajan a domicilio?</div>
-        <div class="text-sm text-slate-600 mt-1">Sí para software. Para hardware en nuestra oficina comercial.</div>
-      </div>
-      <div class="rounded-xl border p-5">
-        <div class="font-medium">¿Qué medios de pago reciben?</div>
-        <div class="text-sm text-slate-600 mt-1">Recibimos todos los medios de pago.</div>
-      </div>
+  <section id="faq" class="max-w-6xl mx-auto px-4 py-16 border-t scroll-mt-20">
+    <h2 class="text-2xl font-bold mb-8 text-center">Preguntas Frecuentes</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <details class="group p-4 border rounded-xl bg-white cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">¿Cuánto demora el servicio? <span class="text-orange-500">+</span></summary>
+        <p class="text-sm text-slate-600 mt-2 pl-4 border-l-2 border-orange-200">Diagnóstico e instalación del sistema en 24—48 h hábiles. Mantenimiento completo: 48—72 h según repuestos.</p>
+      </details>
+      <details class="group p-4 border rounded-xl bg-white cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">¿Tienen garantía? <span class="text-orange-500">+</span></summary>
+        <p class="text-sm text-slate-600 mt-2 pl-4 border-l-2 border-orange-200">Sí, garantía por escrito de 30 a 90 días sobre mano de obra y 1 año en repuestos instalados.</p>
+      </details>
+      <details class="group p-4 border rounded-xl bg-white cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">¿Trabajan a domicilio? <span class="text-orange-500">+</span></summary>
+        <p class="text-sm text-slate-600 mt-2 pl-4 border-l-2 border-orange-200">No. El soporte de software lo realizamos de forma remota. Los trabajos de hardware se atienden exclusivamente en nuestro laboratorio en Barrio Crisol.</p>
+      </details>
+      <details class="group p-4 border rounded-xl bg-white cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">¿Medios de pago? <span class="text-orange-500">+</span></summary>
+        <p class="text-sm text-slate-600 mt-2 pl-4 border-l-2 border-orange-200">Efectivo, Transferencia, MercadoPago y Tarjetas (con recargo según plataforma).</p>
+      </details>
     </div>
   </section>
 
-  <footer class="border-t">
-    <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8">
-      <div class="flex items-center gap-3">
-        <img src="Cisledlogo.png" alt="CISLED" class="h-8 w-8 rounded-xl object-contain" />
-        <div class="font-bold">CISLED</div>
-              <div class="mt-3 flex items-center gap-3">
-          <a href="https://www.instagram.com/cisledcba/" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram text-xl text-slate-700"></i></a>
-          <a href="https://www.facebook.com/cisled" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook text-xl text-slate-700"></i></a>
+  <footer class="bg-slate-900 text-slate-300 py-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-3 mb-4 text-white">
+          <img src="Cisledlogo.png" alt="CISLED" class="h-8 w-8 rounded bg-white object-contain" />
+          <div class="font-bold text-xl">CISLED Computación</div>
         </div>
+        <p class="text-sm text-slate-400 max-w-sm">Soluciones informáticas confiables en Córdoba Capital. Nos dedicamos a revivir tu tecnología con honestidad y profesionalismo.</p>
       </div>
-      <div class="text-sm text-slate-600 md:text-right">
-        © 2025 CISLED. Todos los derechos reservados.
+      <div>
+        <h4 class="text-white font-bold mb-4">Servicios</h4>
+        <ul class="text-sm space-y-2">
+          <li><a href="#servicios" class="hover:text-orange-400">Reparación PC</a></li>
+          <li><a href="#servicios" class="hover:text-orange-400">Notebooks</a></li>
+          <li><a href="#servicios" class="hover:text-orange-400">Armado Gamer</a></li>
+          <li><a href="#remoto" class="hover:text-orange-400">Soporte Remoto</a></li>
+        </ul>
       </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Contacto</h4>
+        <ul class="text-sm space-y-2">
+          <li><i class="fa-brands fa-whatsapp w-5"></i> 351 229 4292</li>
+          <li><i class="fa-solid fa-location-dot w-5"></i> Luis Braile 1546</li>
+          <li><i class="fa-regular fa-clock w-5"></i> Lun-Sáb 9 a 17hs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 mt-10 pt-6 text-center text-xs text-slate-500">
+      © 2025 CISLED Computación. Todos los derechos reservados. Córdoba, Argentina.
     </div>
   </footer>
 
+  <a href="https://wa.me/5493512294292?text=Hola%2C%20necesito%20ayuda%20con%20mi%20PC."
+     class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center rounded-full w-14 h-14 bg-[#25D366] text-white shadow-xl hover:scale-110 transition pulse-border"
+     aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
   <script>
-    // 1. Lógica para el menú hamburguesa (NUEVO)
+    // 1. Menú Móvil
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('mobile-menu');
-
     if (btn && menu) {
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
         });
-
-        // Cerrar menú al hacer clic en un enlace
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-            menu.classList.add('hidden');
-            menu.classList.remove('flex');
+              menu.classList.add('hidden');
+              menu.classList.remove('flex');
             });
         });
     }
 
-    // 2. Smooth anchor scroll original
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
-      });
-    });
-  </script>
+    // 2. Formulario de Reserva a WhatsApp
+    const reservationForm = document.getElementById('reservation-form');
+    if (reservationForm) {
+      reservationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+        const service = formData.get('service');
+        const date = formData.get('date');
+        const time = formData.get('time');
+        const comments = formData.get('comments').trim() || 'Sin comentarios adicionales';
+        
+        // Convertir valor técnico a texto legible
+        let serviceText = service;
+        const serviceMap = {
+            'diagnostico': 'Diagnóstico y limpieza',
+            'mantenimiento': 'Mantenimiento Preventivo',
+            'optimizacion': 'Optimización SW',
+            'upgrade': 'Upgrade Hardware',
+            'reparacion': 'Reparación Notebook',
+            'armado': 'Armado PC',
+            'otro': 'Otro servicio'
+        };
+        if(serviceMap[service]) serviceText = serviceMap[service];
 
-  <a href="https://wa.me/5493512294292?text=Hola%2C%20necesito%20ayuda%20con%20mi%20PC%20o%20Notebook."
-     class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center rounded-full w-14 h-14 bg-[#25D366] text-white shadow-lg"
-     aria-label="Escribir a CISLED por WhatsApp">
-    <i class="fa-brands fa-whatsapp text-2xl"></i>
-  </a>
- </body>
+        // CORREGIDO: Mensaje de WhatsApp con nuevo horario
+        const timeText = time === 'morning' ? 'Mañana (9-12)' : 'Tarde (12-17)';
+        
+        // Armar mensaje
+        const message = `*SOLICITUD DE TURNO WEB* 📅
+        
+👤 *Cliente:* ${name}
+📱 *Tel:* ${phone}
+🛠 *Servicio:* ${serviceText}
+📆 *Día:* ${date}
+⏰ *Horario:* ${timeText}
+
+📝 *Nota:* ${comments}
+
+_Espero confirmación. Gracias._`;
+        
+        const whatsappUrl = `https://wa.me/5493512294292?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+      });
+    }
+
+    // 3. Configuración de Fecha (Min Hoy + No Domingos)
+    const dateInput = document.querySelector('input[name="date"]');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+
+      dateInput.addEventListener('input', function(e) {
+        const day = new Date(this.value).getUTCDay();
+        if(day === 0) { // 0 es Domingo
+           alert('Lo sentimos, los domingos estamos cerrados. Por favor seleccioná de Lunes a Sábado.');
+           this.value = '';
+        }
+      });
+    }
+
+    // 4. Generador de Calendario Dinámico (Semanal)
+    const calendarContainer = document.getElementById('dynamic-calendar');
+    if(calendarContainer) {
+        const daysES = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+        let htmlContent = '';
+        let count = 0;
+        let d = new Date();
+
+        while(count < 6) {
+            const dayIndex = d.getDay();
+            if(dayIndex !== 0) {
+                const dayName = daysES[dayIndex];
+                const dayNumber = d.getDate();
+                let statusClass = "bg-green-50 border-green-200 text-green-700";
+                let statusText = "✅ Disponible";
+                
+                if(count === 0) {
+                     statusClass = "bg-orange-50 border-orange-200 text-orange-700";
+                     statusText = "🔥 Últimos lugares";
+                }
+
+                htmlContent += `
+                  <div class="p-3 rounded-lg border-2 ${statusClass} flex flex-col items-center justify-center">
+                    <div class="font-bold text-slate-800">${dayName} ${dayNumber}</div>
+                    <div class="text-xs font-medium mt-1">${statusText}</div>
+                  </div>
+                `;
+                count++;
+            }
+            d.setDate(d.getDate() + 1);
+        }
+        calendarContainer.innerHTML = htmlContent;
+    }
+  </script>
+</body>
 </html>
